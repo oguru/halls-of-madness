@@ -5,17 +5,17 @@
 }
 
 .leftEye {
-  position: absolute;
-  top: 58px;
-  left: 88px;
+  position: relative;
+  bottom: 150px;
+  left: 76px;
   width: 20px;
   height: 20px;
 }
 
 .rightEye {
-  position: absolute;
-  width: 20px;
+  position: relative;
+  bottom: 167px;
+  left: 100px;
+  width: 14px;
   height: 20px;
-  top: 58px;
-  left: 111px;
 }

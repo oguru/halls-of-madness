@@ -1,38 +1,40 @@
-div {
-  height: 100%;
-  width: 100%;
-}
+// div {
+//   height: 100%;
+//   width: 100%;
+// }
 
 p {
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-.eye {
-  height: 100%;
-  width: 100%;
+  position: relative;
 }
 
 .sheaLeft {
   background-image: url("../../assets/left.png");
+  background-position: center;
+  width: 20px;
+  height: 20px;
 }
 
 .sheaRight {
   background-image: url("../../assets/right.png");
+  background-position: center;
+  width: 14px;
+  height: 20px;
 }
 
-.liamLeft {
-  background-image: url("../../assets/left.png");
-}
+// .liamLeft {
+//   background-image: url("../../assets/left.png");
+// }
 
-.liamRight {
-  background-image: url("../../assets/left.png");
-}
+// .liamRight {
+//   background-image: url("../../assets/left.png");
+// }
 
-.mattLeft {
-  background-image: url("../../assets/left.png");
-}
+// .mattLeft {
+//   background-image: url("../../assets/left.png");
+// }
 
-.mattRight {
-  background-image: url("../../assets/left.png");
-}
+// .mattRight {
+//   background-image: url("../../assets/left.png");
+// }

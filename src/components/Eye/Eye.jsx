@@ -27,7 +27,7 @@ const Eye = props => {
       break;
   }
 
-  return <div>{eye}</div>;
+  return <>{eye}</>;
 };
 
 export default Eye;

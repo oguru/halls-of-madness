@@ -8,13 +8,11 @@ const Dashboard = props => {
   let faceArray = [];
 
   for (let i = 0; i < number; i++) {
-    faceArray.push(<SheaFace />);
+    faceArray.push(<SheaFace eyeAngle={Math.floor(Math.random() * (365 - 1)) + 1} />);
   }
 
   return (
     <>
-      {console.log(faceArray)}
-
       <section className={styles.dashboard}>{faceArray}</section>
     </>
   );
