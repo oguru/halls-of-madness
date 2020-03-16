@@ -4,22 +4,29 @@ import "./App.css";
 import Dashboard from "./containers/Dashboard";
 
 function App() {
-  // let randomNum;
+  let randomNum = 5;
+  let createFaces;
 
   // const createFaces = number => {
-  //   <Dashboard number={number} />;
+  //   return <Dashboard number={number} />;
   // };
 
-  // fetch("https://csrng.net/csrng/csrng.php?min=1&max=100")
+  // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  // const url = "https://csrng.net/csrng/csrng.php?min=1&max=100";
+
+  // fetch(proxyUrl + url)
   //   .then(result => {
   //     randomNum = result[0].random;
-  //     return createFaces(randomNum);
+  //     console.log(result[0]);
+
+  createFaces = <Dashboard number={randomNum} />;
   //   })
   //   .catch(error => console.log(error));
 
   return (
     <>
-      <Dashboard number={5} />
+      {/* <Dashboard number={5} /> */}
+      {createFaces}
     </>
   );
 }

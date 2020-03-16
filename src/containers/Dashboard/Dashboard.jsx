@@ -8,7 +8,9 @@ const Dashboard = props => {
   let faceArray = [];
 
   for (let i = 0; i < number; i++) {
-    faceArray.push(<SheaFace eyeAngle={Math.floor(Math.random() * (365 - 1)) + 1} />);
+    faceArray.push(
+      <SheaFace eyeAngle={Math.floor(Math.random() * (360 - 1)) + 1} />
+    );
   }
 
   return (

@@ -4,22 +4,24 @@ import Face from "../../components/Face";
 import Eye from "../../components/Eye";
 
 const SheaFace = props => {
-  const {eyeAngle} = props;
+  const { eyeAngle } = props;
 
-  // const angle = eyeAngle
+  const [currentAngle, changeAngle] = useState(0);
 
-  const [currentAngle, changeAngle] = useState(0)
+  const checkAngle = () => (currentAngle === eyeAngle ? 0 : eyeAngle);
 
-  const checkAngle = eyeAngle => eyeAngle === eyeAngle ? 0 : eyeAngle;
+  const setLeftAngle = { transform: `rotate(${currentAngle}deg)` };
+
+  const setRightAngle = { transform: `rotate(${-currentAngle}deg)` };
 
   return (
     <>
-      <div className={styles.face} onClick={changeAngle(checkAngle(eyeAngle))} >
+      <div className={styles.face} onClick={() => changeAngle(checkAngle())}>
         <Face />
-        <div className={styles.leftEye} style={transform([{ rotateX: '45deg' }, { rotateZ: '0.785398rad' }])}>
-          <Eye type={"sheaLeft"}/>
+        <div style={setLeftAngle} className={styles.leftEye}>
+          <Eye type={"sheaLeft"} />
         </div>
-        <div className={styles.rightEye}>
+        <div style={setRightAngle} className={styles.rightEye}>
           <Eye type={"sheaRight"} />
         </div>
       </div>
@@ -30,5 +32,5 @@ const SheaFace = props => {
 export default SheaFace;
 
 // {
-  // transform: [{ rotate: '90deg'}]
-  // <div className={styles.leftEye} style={{transform: rotate(currentAngle)}}>
+// transform: [{ rotate: '90deg'}]
+// <div className={styles.leftEye} style={{transform: rotate(currentAngle)}}>
