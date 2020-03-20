@@ -11,6 +11,7 @@ describe("App tests", () => {
   });
 
   it("should get a number from the api", () => {
+    component.find
     expect(component.find(randomNum).toBe(!null));
   });
 });
