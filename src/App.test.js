@@ -10,7 +10,7 @@ describe("App tests", () => {
     component = mount(App);
   });
 
-  it("should get a number from the api", () => {
+  it("should render the faces and eyes on the page", () => {
     component.find
     expect(component.find(randomNum).toBe(!null));
   });

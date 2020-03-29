@@ -10,7 +10,7 @@ function App() {
   const [randomNum, changeNumber] = useState(0);
 
   useEffect(() => {
-    fetch('https://www.random.org/integers/?num=1&min=1&max=9&col=1&base=10&format=plain&rnd=new')
+    fetch('https://www.random.org/integers/?num=1&min=15&max=22&col=1&base=10&format=plain&rnd=new')
     .then(result => result.json())
     .then(result => {
         fetchedNum = result;

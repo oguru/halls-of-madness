@@ -1,0 +1,49 @@
+.faceDefault {
+  width: 200px;
+  height: 220px;
+  margin: 15px;
+
+  .eye {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 10px;
+    height: 10px;
+
+  }
+
+  div {
+    transition: transform 1s;
+  }
+  // 
+  .sheaLeft {
+    bottom: 126px;
+    left: 66px;
+  }
+
+  .sheaRight {
+    bottom: 138px;
+    left: 87px;
+  }
+
+  .mattLeft {
+    bottom: 125px;
+    left: 79px;
+  }
+
+  .mattRight {
+    bottom: 138px;
+    left: 100px;
+  }
+
+  .liamLeft {
+    bottom: 125px;
+    left: 66px;
+  }
+
+  .liamRight {
+    bottom: 138px;
+    left: 87px;
+  }
+}

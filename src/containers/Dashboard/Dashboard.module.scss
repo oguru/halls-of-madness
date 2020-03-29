@@ -1,4 +1,14 @@
-.dashboard {
-  display: inline-grid;
-  grid-template-columns: auto auto auto auto;
+h1 {
+  font-family: 'Eater', cursive;
+  font-size: 48px;
+  padding-top: 30px;
+  text-align: center;
 }
+
+.dashboard {
+  display: flex;
+  justify-content: space-evenly;  
+  margin: 0 40px;
+  flex-wrap: wrap;
+}
+

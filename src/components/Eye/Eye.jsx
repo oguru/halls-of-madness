@@ -2,32 +2,17 @@ import React from "react";
 import styles from "./Eye.module.scss";
 
 const Eye = props => {
-  const { type } = props;
+  const { leftEye, rightEye, leftText, rightText } = props;
 
-  let eye;
+  let eyeImage;
 
-  switch (type) {
-    case "sheaLeft":
-      eye = <p className={`${styles.sheaLeft} ${styles.eye}`}></p>;
-      break;
-    case "sheaRight":
-      eye = <p className={`${styles.sheaRight} ${styles.eye}`}></p>;
-      break;
-    case "liamLeft":
-      eye = <p className={`${styles.liamLeft} ${styles.eye}`}></p>;
-      break;
-    case "liamRight":
-      eye = <p className={`${styles.liamRight} ${styles.eye}`}></p>;
-      break;
-    case "mattLeft":
-      eye = <p className={`${styles.mattLeft} ${styles.eye}`}></p>;
-      break;
-    case "mattRight":
-      eye = <p className={`${styles.mattRight} ${styles.eye}`}></p>;
-      break;
-  }
+  leftEye !== undefined ? eyeImage = leftEye : eyeImage = rightEye; 
 
-  return <>{eye}</>;
+  return <>
+
+  <img src={eyeImage} alt={eyeImage} className={`${styles.eyeSize} ${styles[leftText]} ${styles[rightText]}`}/>
+    {/* {eye} */}
+  </>;
 };
 
 export default Eye;
