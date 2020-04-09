@@ -52,7 +52,7 @@ const Face = (props) => {
 
   return (
     <>
-      <img src={face} alt="liam" />
+      <img src={face} alt="liam" className={styles.face} />
     </>
   );
 };

@@ -1,6 +1,7 @@
 h1 {
   font-family: 'Eater', cursive;
-  font-size: 48px;
+  position: fixed;
+  font-size: 45px;
   padding-top: 30px;
   text-align: center;
 }
@@ -8,7 +9,22 @@ h1 {
 .dashboard {
   display: flex;
   justify-content: space-evenly;  
-  margin: 0 40px;
+  margin: 0 8px;
   flex-wrap: wrap;
+
 }
 
+@media only screen and (min-width: 425px) {
+  h1 {
+    font-size: 55px;
+  }
+  .dashboard {
+    margin: 0 40px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+
+  }
+}

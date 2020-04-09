@@ -13,16 +13,7 @@ import liamRight from "../../assets/liam-right.png";
 
 const Dashboard = props => {
   const { number } = props;
-
-  // const sheaFace = {face: shea, leftEyePos: "sheaLeft",
-  // rightEyePos: "sheaRight"};
-
-  // const mattFace = {face: matt, leftEyePos: "mattLeft",
-  // rightEyePos: "mattRight"};
-
-  // const liamFace = {face: liam, leftEyePos: "liamLeft",
-  // rightEyePos: "liamRight"};
-
+ 
   let faceArray = [
     // <RandomFace 
     //   face={shea}
@@ -48,11 +39,7 @@ const Dashboard = props => {
 ];
 
   for (let i = 0; i < number; i++) {
-    // let leftEye;
-    // let rightEye;
-    
-    // let getRandomEye
-    // Math.floor(Math.random() * 6)
+
     let randomFace;
     let leftEyePos;
     let rightEyePos
@@ -77,22 +64,6 @@ const Dashboard = props => {
     else {
     switch (getRandomFace) {
 
-      // case (0):
-      //   randomFace = sheaFace
-      //   leftEyePos = "sheaLeft"
-      //   rightEyePos = "sheaRight"
-      //   break;
-      // case (1):
-      //   randomFace = mattFace
-      //   leftEyePos = "mattLeft"
-      //   rightEyePos = "mattRight"
-      //   break;
-      // default: 
-      //   randomFace = liamFace
-      //   leftEyePos = "liamLeft"
-      //   rightEyePos = "liamRight"
-      //   break;
-
       case (0):
         randomFace = shea
         leftEyePos = "sheaLeft"
@@ -111,11 +82,9 @@ const Dashboard = props => {
     }
   }
 
-
-
-    let getLeftEye = Math.floor(Math.random() * 6);
+    let getLeftEye = Math.floor(Math.random() * 3);
     let leftText;
-    let getRightEye = Math.floor(Math.random() * 6);
+    let getRightEye = Math.floor(Math.random() * 3);
     let rightText;
 
     switch (getLeftEye) {
@@ -124,49 +93,25 @@ const Dashboard = props => {
         leftText = "sheaLeft"
         break;
       case (1):
-        getLeftEye = sheaRight;
-        leftText = "sheaRight"
-        break;
-      case (2):
         getLeftEye = mattLeft;
         leftText = "mattLeft"
         break;
-      case (3):
-        getLeftEye = mattRight;
-        leftText = "mattRight"
-        break;
-      case (4):
+      case (2):
         getLeftEye = liamLeft;
         leftText = "liamLeft"
-        break;
-      case (5):
-        getLeftEye = liamRight;
-        leftText = "liamRight"
         break;
     }
   
     switch (getRightEye) {
       case (0):
-        getRightEye = sheaLeft;
-        rightText = "sheaLeft"
-        break;
-      case (1):
         getRightEye = sheaRight;
         rightText = "sheaRight"
         break;
-      case (2):
-        getRightEye = mattLeft;
-        rightText = "mattLeft"
-        break;
-      case (3):
+      case (1):
         getRightEye = mattRight;
         rightText = "mattRight"
         break;
-      case (4):
-        getRightEye = liamLeft;
-        rightText = "liamLeft"
-        break;
-      case (5):
+      case (2):
         getRightEye = liamRight;
         rightText = "liamRight"
         break;
@@ -182,13 +127,13 @@ const Dashboard = props => {
         rightEye={getRightEye}
         leftText={leftText}
         rightText={rightText}
-        eyeAngle={Math.floor(Math.random() * (360 - 1)) + 1} />
+        eyeAngle={Math.floor(Math.random() * (360 - 1)) + 20} />
     );
   }
-
+  
   return (
     <>
-    <h1>Faces of Madness</h1>
+      {/* <h1>Faces of Madness</h1> */}
       <section className={styles.dashboard}>{faceArray}</section>
     </>
   );

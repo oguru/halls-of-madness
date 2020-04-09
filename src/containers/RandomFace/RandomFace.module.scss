@@ -1,6 +1,6 @@
 .faceDefault {
-  width: 200px;
-  height: 220px;
+  width: 275px;
+  height: 300px;
   margin: 15px;
 
   .eye {
@@ -8,42 +8,42 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
 
   }
 
   div {
     transition: transform 1s;
   }
-  // 
+
   .sheaLeft {
-    bottom: 126px;
-    left: 66px;
+    bottom: 173px;
+    left: 91px;
   }
 
   .sheaRight {
-    bottom: 138px;
-    left: 87px;
+    bottom: 195px;
+    left: 118px;
   }
 
   .mattLeft {
-    bottom: 125px;
-    left: 79px;
+    bottom: 176px;
+    left: 115px;
   }
 
   .mattRight {
-    bottom: 138px;
-    left: 100px;
+    bottom: 198px;
+    left: 148px;
   }
 
   .liamLeft {
-    bottom: 125px;
-    left: 66px;
+    bottom: 168px;
+    left: 112px;
   }
 
   .liamRight {
-    bottom: 138px;
-    left: 87px;
+    bottom: 190px;
+    left: 148px;
   }
 }
