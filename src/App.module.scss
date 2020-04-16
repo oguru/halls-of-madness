@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Eater', cursive;
   }
   
   body {
@@ -10,6 +11,8 @@
     background-attachment: fixed;
 
     button {
+      filter: grayscale(40%);
+      font-size: 30px;
       position: fixed;
       background-size: cover;
       background-position: center;
@@ -20,6 +23,8 @@
       background-image: url(./assets/button.png);
       background-color: transparent;
       border: none;
+      z-index: 101;
+      transition: 3s;
     }
 
     .mainPage {
@@ -32,5 +37,35 @@
 
     .dashboardContainer {
         padding: 50px;
+    }
+
+    .bgOverlay {
+      background-color: black;
+      opacity: 1;
+      z-index: 100;
+      transition: 6s;
+      // pointer-events: none;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+    top: 0;
+    left: 0;
+    }
+
+    .bgOverlay {
+      opacity: 1;
+    }
+
+    .bgOverlayOff {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .startBtnInit {
+      opacity: 1;
+    }
+
+    .startBtnClicked {
+      opacity: 0;
     }
   }
