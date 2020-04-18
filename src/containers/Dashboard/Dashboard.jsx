@@ -12,7 +12,7 @@ import liamLeft from "../../assets/liam-left.png";
 import liamRight from "../../assets/liam-right.png";
 
 const Dashboard = props => {
-  const { stopClickMe, changeClickMeStatus, number, oh } = props;
+  const { stopClickMe, clickMeStatus, number, oh } = props;
 
   let faceArray = [
     // <RandomFace 
@@ -120,7 +120,7 @@ const Dashboard = props => {
 
     faceArray.push(
       <RandomFace
-        changeClickMeStatus={changeClickMeStatus}
+        clickMeStatus={clickMeStatus}
         stopClickMe={stopClickMe}
         oh={oh}
         face={randomFace}

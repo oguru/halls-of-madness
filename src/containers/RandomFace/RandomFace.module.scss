@@ -1,3 +1,15 @@
+section {
+  transition: 4s;
+}
+
+.showFaces {
+  opacity: 1;
+}
+
+.hideFaces {
+  opacity: 0;
+}
+
 .faceDefault {
   width: 275px;
   height: 300px;
