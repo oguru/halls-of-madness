@@ -1,75 +1,135 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Eater', cursive;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Eater", cursive;
+}
+
+body {
+  background-image: url("./assets/grunge-background.jpg");
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  
-  body {
-    background-image: url("./assets/grunge-background.jpg");
-    background-size: 100vw 100vh;
-    background-attachment: fixed;
 
-    button {
-      filter: grayscale(40%);
-      font-size: 30px;
-      position: fixed;
-      background-size: cover;
-      background-position: center;
-      width: 200px;
-      height: 140px;
-      top: calc(50vh - 70px);
-      left: calc(50vw - 100px);
-      background-image: url(./assets/button.png);
-      background-color: transparent;
-      border: none;
-      z-index: 101;
-      transition: 3s;
+  h1,
+  h2 {
+    position: fixed;
+    width: 100vw;
+    text-align: center;
+    z-index: 1000;
+    animation: glow 5s infinite ease-in-out;
+    transition: 5s;
+    background-color: transparent;
+  }
+
+  @keyframes glow {
+    0% {
+      text-shadow: 0px 2px 1px rgb(255, 255, 255);
+      background-color: rgba(0, 0, 0, 0);
+      color: #8db889;
+      box-shadow: 0 0 15px 5px #8db889;
     }
 
-    .mainPage {
-        width: 100vw;
-        height: 100vh;
-        z-index: 100;
-        position: fixed;
-        pointer-events: none
+    50% {
+      text-shadow: 0px 2px 1px rgb(0, 0, 0);
+      box-shadow: 0 0 70px 45px #65b35e;
+      color: #ffffff;
+      background-color: #65b35e;
     }
 
-    .dashboardContainer {
-        padding: 50px;
+    100% {
+      text-shadow: 0px 2px 1px rgb(255, 255, 255);
+      background-color: rgba(0, 0, 0, 0);
+      color: #8db889;
+      box-shadow: 0 0 15px 5px #8db889;
     }
+  }
 
-    .bgOverlay {
-      background-color: black;
-      opacity: 1;
-      z-index: 100;
-      transition: 6s;
-      // pointer-events: none;
-      width: 100vw;
-      height: 100vh;
-      position: absolute;
+  h1 {
+    font-size: 35px;
+    top: calc(20vh - 85px);
+  }
+
+  h2 {
+    font-size: 28px;
+    bottom: calc(20vh - 85px);
+  }
+
+  button {
+    border-radius: 20%;
+    filter: grayscale(40%);
+    font-size: 30px;
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    height: 140px;
+    top: calc(50vh - 70px);
+    left: calc(50vw - 100px);
+    background-image: url(./assets/button.png);
+    background-color: transparent;
+    border: none;
+    z-index: 101;
+    transition: 3s;
+  }
+
+  .mainPage {
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+
+  .dashboardContainer {
+    padding: 50px;
+  }
+
+  .bgOverlay {
+    background-color: black;
+    position: fixed;
+    opacity: 1;
+    z-index: 100;
+    transition: 6s;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
     top: 0;
     left: 0;
-    }
+  }
 
-    .bgOverlay {
-      opacity: 1;
-    }
+  .bgOverlayOff {
+    opacity: 0;
+    pointer-events: none;
+  }
 
-    .bgOverlayOff {
-      opacity: 0;
-      pointer-events: none;
-    }
+  .startBtnInit {
+    opacity: 1;
+  }
 
-    .startBtnInit {
-      opacity: 1;
-    }
+  .startBtnClicked {
+    opacity: 0;
+  }
 
-    .startBtnClicked {
-      opacity: 0;
-    }
+  .startBtnDisplayNone {
+    display: none;
+  }
+}
 
-    .startBtnDisplayNone {
-      display: none;
+@media only screen and (min-width: 768px) {
+  body {
+    h1 {
+      font-size: 55px;
+    }
+    h2 {
+      font-size: 40px;
     }
   }
+}

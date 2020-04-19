@@ -14,70 +14,45 @@ import liamRight from "../../assets/liam-right.png";
 const Dashboard = props => {
   const { stopClickMe, clickMeStatus, number, oh } = props;
 
-  let faceArray = [
-    // <RandomFace 
-    //   face={shea}
-    //   leftEyePos = "sheaLeft"
-    //   rightEyePos = "sheaRight"
-    //   leftEye = {sheaLeft}
-    //   rightEye = {sheaRight}
-    //   eyeAngle={Math.floor(Math.random() * (360 - 1)) + 1} />,
-    // <RandomFace 
-    //   face={matt} 
-    //   leftEyePos = "mattLeft"
-    //   rightEyePos = "mattRight"
-    //   leftEye = {mattLeft}
-    //   rightEye = {mattRight}
-    //   eyeAngle={Math.floor(Math.random() * (360 - 1)) + 1} />,
-    // <RandomFace 
-    //   face={liam} 
-    //   leftEyePos = "liamLeft"
-    //   rightEyePos = "liamRight"
-    //   leftEye = {liamLeft}
-    //   rightEye = {liamRight}
-    //   eyeAngle={Math.floor(Math.random() * (360 - 1)) + 1} />
-  ];
+  let faceArray = [];
 
+  //gets n number of random eyes and faces
   for (let i = 0; i < number; i++) {
-
     let randomFace;
     let leftEyePos;
-    let rightEyePos
+    let rightEyePos;
 
-    const getRandomFace = Math.floor(Math.random() * 3)
+    const getRandomFace = Math.floor(Math.random() * 3);
 
+    //if statement to initialise with one of each face and original eyes, then continue to random
     if (i === 0) {
-      randomFace = shea
-      leftEyePos = "sheaLeft"
-      rightEyePos = "sheaRight"
-    }
-    else if (i === 1) {
-      randomFace = matt
-      leftEyePos = "mattLeft"
-      rightEyePos = "mattRight"
-    }
-    else if (i === 2) {
-      randomFace = liam
-      leftEyePos = "liamLeft"
-      rightEyePos = "liamRight"
-    }
-    else {
+      randomFace = shea;
+      leftEyePos = "sheaLeft";
+      rightEyePos = "sheaRight";
+    } else if (i === 1) {
+      randomFace = matt;
+      leftEyePos = "mattLeft";
+      rightEyePos = "mattRight";
+    } else if (i === 2) {
+      randomFace = liam;
+      leftEyePos = "liamLeft";
+      rightEyePos = "liamRight";
+    } else {
       switch (getRandomFace) {
-
-        case (0):
-          randomFace = shea
-          leftEyePos = "sheaLeft"
-          rightEyePos = "sheaRight"
+        case 0:
+          randomFace = shea;
+          leftEyePos = "sheaLeft";
+          rightEyePos = "sheaRight";
           break;
-        case (1):
-          randomFace = matt
-          leftEyePos = "mattLeft"
-          rightEyePos = "mattRight"
+        case 1:
+          randomFace = matt;
+          leftEyePos = "mattLeft";
+          rightEyePos = "mattRight";
           break;
         default:
-          randomFace = liam
-          leftEyePos = "liamLeft"
-          rightEyePos = "liamRight"
+          randomFace = liam;
+          leftEyePos = "liamLeft";
+          rightEyePos = "liamRight";
           break;
       }
     }
@@ -88,36 +63,36 @@ const Dashboard = props => {
     let rightText;
 
     switch (getLeftEye) {
-      case (0):
+      case 0:
         getLeftEye = sheaLeft;
-        leftText = "sheaLeft"
+        leftText = "sheaLeft";
         break;
-      case (1):
+      case 1:
         getLeftEye = mattLeft;
-        leftText = "mattLeft"
+        leftText = "mattLeft";
         break;
-      case (2):
+      default:
         getLeftEye = liamLeft;
-        leftText = "liamLeft"
+        leftText = "liamLeft";
         break;
     }
 
     switch (getRightEye) {
-      case (0):
+      case 0:
         getRightEye = sheaRight;
-        rightText = "sheaRight"
+        rightText = "sheaRight";
         break;
-      case (1):
+      case 1:
         getRightEye = mattRight;
-        rightText = "mattRight"
+        rightText = "mattRight";
         break;
-      case (2):
+      default:
         getRightEye = liamRight;
-        rightText = "liamRight"
+        rightText = "liamRight";
         break;
     }
 
-
+    // create face array to print
     faceArray.push(
       <RandomFace
         clickMeStatus={clickMeStatus}
@@ -130,13 +105,13 @@ const Dashboard = props => {
         rightEye={getRightEye}
         leftText={leftText}
         rightText={rightText}
-        eyeAngle={Math.floor(Math.random() * (360 - 1)) + 20} />
+        eyeAngle={Math.floor(Math.random() * (360 - 1)) + 20}
+      />
     );
   }
 
   return (
     <>
-      {/* <h1>Halls of Madness</h1> */}
       <section className={styles.dashboard}>{faceArray}</section>
     </>
   );

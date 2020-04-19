@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import styles from "./App.module.scss";
-import border from "./assets/grunge-frame.png"
+import border from "./assets/grunge-frame.png";
 import Dashboard from "./containers/Dashboard";
 import audio from "./assets/audio/audio.js";
 
 function App() {
-
-  // let fetchedNum;
-  // let playStatus;
-
   const [randomNum, changeNumber] = useState(0);
-  // const [appStarted, startApp] = useState(false);
-  // const [appShown, appVisibility] = useState();
   const [startVisibility, changeVisibility] = useState(styles.startBtnInit);
   const [bgOverlayStatus, changeBgOverlay] = useState(styles.bgOverlayOn);
   const [clickMeStatus, changeClickMeStatus] = useState(false);
 
-
+  //get random number from API
   useEffect(() => {
-    fetch('https://www.random.org/integers/?num=1&min=15&max=22&col=1&base=10&format=plain&rnd=new')
+    fetch(
+      "https://www.random.org/integers/?num=1&min=15&max=22&col=1&base=10&format=plain&rnd=new"
+    )
       .then(result => result.json())
       .then(result => changeNumber(result))
       .catch(error => console.log(error));
   }, []);
 
-  function sound(src, vol, delay) {
+  //method to create sounds
+  function sound(src, vol) {
     this.sound = document.createElement("audio");
     this.sound.src = src;
     this.sound.setAttribute("preload", "auto");
@@ -35,10 +32,10 @@ function App() {
     document.body.appendChild(this.sound);
     this.play = function () {
       this.sound.play();
-    }
+    };
     this.stop = function () {
       this.sound.pause();
-    }
+    };
   }
 
   let welcome = new sound(audio.intro.welcome, 0.5);
@@ -59,14 +56,14 @@ function App() {
       changeBgOverlay(styles.bgOverlayOff);
     }, 3700);
     setTimeout(() => {
-      changeClickMeStatus(true)
+      changeClickMeStatus(true);
     }, 8000);
-  }
+  };
 
   //play the selected clickme sound
-  const playClickMe = (index) => {
+  const playClickMe = index => {
     clickMe[index].play();
-  }
+  };
 
   let soundLoop;
 
@@ -76,9 +73,9 @@ function App() {
     playClickMe(randomClickMe);
     let randTime = Math.ceil(Math.random() * (2500 - 1000) + 1000);
     soundLoop = setTimeout(() => {
-      playRandomClickMe()
+      playRandomClickMe();
     }, randTime);
-  }
+  };
 
   //to break clickme sound loop
   const stopClickMe = () => clearTimeout(soundLoop);
@@ -90,13 +87,22 @@ function App() {
   return (
     <>
       <span></span>
-      <img src={border} className={styles.mainPage} alt="border"/>
-      <button onClick={() => handleClick()} className={startVisibility}>Start</button>
+      <img src={border} className={styles.mainPage} alt="border" />
+      <h1 className={startVisibility}>Halls of Madness</h1>
+      {/* prettier-ignore */}
+      <h2 className={startVisibility}>Enter &#8202; at your own peril...</h2>
+      <button onClick={() => handleClick()} className={startVisibility}>
+        Start
+      </button>
       <section className={styles.dashboardContainer}>
-        <Dashboard clickMeStatus={clickMeStatus} stopClickMe={stopClickMe} oh={oh} number={randomNum} />
+        <Dashboard
+          clickMeStatus={clickMeStatus}
+          stopClickMe={stopClickMe}
+          oh={oh}
+          number={randomNum}
+        />
       </section>
-      <section className={`${styles.bgOverlay} ${bgOverlayStatus}`}>
-      </section>
+      <section className={`${styles.bgOverlay} ${bgOverlayStatus}`}></section>
     </>
   );
 }
