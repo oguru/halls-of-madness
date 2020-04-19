@@ -11,6 +11,9 @@
 # production
 /build
 
+#raw wav files
+/src/assets/ignore
+
 # misc
 .DS_Store
 .env.local

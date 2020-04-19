@@ -95,6 +95,7 @@ const Dashboard = props => {
     // create face array to print
     faceArray.push(
       <RandomFace
+        key={`rand${faceArray.length}`}
         clickMeStatus={clickMeStatus}
         stopClickMe={stopClickMe}
         oh={oh}

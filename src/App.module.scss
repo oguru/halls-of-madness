@@ -24,7 +24,7 @@ body {
     z-index: 1000;
     animation: glow 5s infinite ease-in-out;
     transition: 5s;
-    background-color: transparent;
+    padding: 0 10px;
   }
 
   @keyframes glow {
@@ -76,6 +76,7 @@ body {
     border: none;
     z-index: 101;
     transition: 3s;
+    outline: none;
   }
 
   .mainPage {
@@ -100,7 +101,6 @@ body {
     transition: 6s;
     width: 100vw;
     height: 100vh;
-    position: absolute;
     top: 0;
     left: 0;
   }

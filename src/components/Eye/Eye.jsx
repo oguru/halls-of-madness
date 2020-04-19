@@ -6,13 +6,17 @@ const Eye = props => {
 
   let eyeImage;
 
-  leftEye !== undefined ? eyeImage = leftEye : eyeImage = rightEye; 
+  leftEye ? (eyeImage = leftEye) : (eyeImage = rightEye);
 
-  return <>
-
-  <img src={eyeImage} alt={eyeImage} className={`${styles.eyeSize} ${styles[leftText]} ${styles[rightText]}`}/>
-    {/* {eye} */}
-  </>;
+  return (
+    <>
+      <img
+        src={eyeImage}
+        alt={eyeImage}
+        className={`${styles.eyeSize} ${styles[leftText]} ${styles[rightText]}`}
+      />
+    </>
+  );
 };
 
 export default Eye;

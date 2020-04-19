@@ -14,7 +14,7 @@ function App() {
   //get random number from API
   useEffect(() => {
     fetch(
-      "https://www.random.org/integers/?num=1&min=15&max=22&col=1&base=10&format=plain&rnd=new"
+      "https://www.random.org/integers/?num=1&min=10&max=20&col=1&base=10&format=plain&rnd=new"
     )
       .then(result => result.json())
       .then(result => changeNumber(result))
