@@ -9,13 +9,11 @@ const Eye = props => {
   leftEye ? (eyeImage = leftEye) : (eyeImage = rightEye);
 
   return (
-    <>
-      <img
-        src={eyeImage}
-        alt={eyeImage}
-        className={`${styles.eyeSize} ${styles[leftText]} ${styles[rightText]}`}
-      />
-    </>
+    <img
+      src={eyeImage}
+      alt={eyeImage}
+      className={`${styles.eyeSize} ${styles[leftText]} ${styles[rightText]}`}
+    />
   );
 };
 

@@ -111,11 +111,7 @@ const Dashboard = props => {
     );
   }
 
-  return (
-    <>
-      <section className={styles.dashboard}>{faceArray}</section>
-    </>
-  );
+  return <section className={styles.dashboard}>{faceArray}</section>;
 };
 
 export default Dashboard;

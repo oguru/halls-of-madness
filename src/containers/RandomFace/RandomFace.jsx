@@ -39,29 +39,27 @@ const RandomFace = props => {
     : (backgroundStyle = styles.hideFaces);
 
   return (
-    <>
-      <section className={backgroundStyle}>
+    <section className={backgroundStyle}>
+      <div
+        className={styles.faceDefault}
+        onClick={() => {
+          changeAngle(checkAngle());
+          playOh();
+          stopClickMe();
+        }}>
+        <Face face={face} />
         <div
-          className={styles.faceDefault}
-          onClick={() => {
-            changeAngle(checkAngle());
-            playOh();
-            stopClickMe();
-          }}>
-          <Face face={face} />
-          <div
-            style={setLeftAngle}
-            className={`${styles[leftEyePos]} ${styles.eye}`}>
-            <Eye leftEye={leftEye} leftText={leftText} />
-          </div>
-          <div
-            style={setRightAngle}
-            className={`${styles[rightEyePos]} ${styles.eye}`}>
-            <Eye leftEye={rightEye} rightText={rightText} />
-          </div>
+          style={setLeftAngle}
+          className={`${styles[leftEyePos]} ${styles.eye}`}>
+          <Eye leftEye={leftEye} leftText={leftText} />
         </div>
-      </section>
-    </>
+        <div
+          style={setRightAngle}
+          className={`${styles[rightEyePos]} ${styles.eye}`}>
+          <Eye leftEye={rightEye} rightText={rightText} />
+        </div>
+      </div>
+    </section>
   );
 };
 
