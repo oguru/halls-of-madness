@@ -5,7 +5,7 @@ An app created in React to practice fetching from an API and passing functions a
 Extended by creating a better user interface and by experimenting with adding sound to make the experience as bizarre as possible.
 
 ## Still To Do
-* Fix bug where a sound occasionally doesn't play on click. I will implement Howler.js and experiment with using that for sound.
+* Fix bug where a sound occasionally doesn't play on click. I will implement Howler.js/use-sound and experiment with using that for sound.
 * Turn into a game with scoreboard ala whack-a-mole, where you will have to click when one makes a sound.
 * Randomise eye size to some extent.
 
