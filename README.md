@@ -6,6 +6,7 @@ Extended by creating a better user interface and by experimenting with adding so
 
 ## Still To Do
 * Fix bug where a sound occasionally doesn't play on click. I will implement Howler.js/use-sound and experiment with using that for sound.
+* Implement loading so sounds load up before starting.
 * Turn into a game with scoreboard ala whack-a-mole, where you will have to click when one makes a sound.
 * Randomise eye size to some extent.
 
